@@ -26,9 +26,9 @@ app.get("/random",async (req,res)=>{
 app.get("/basic", async (req,res)=>{
     try {
         
-//         const register = await axios.post("https://secrets-api.appbrewery.com/register",{username:"moon123",password:"moon"}) ;
+//         const register = await axios.post("https://secrets-api.appbrewery.com/register",{username:"",password:""}) ;
 // console.log(register.data)
-const response = await axios.get("https://secrets-api.appbrewery.com/all?page=1",{auth:{username:"moon123",password:"moon"}});
+const response = await axios.get("https://secrets-api.appbrewery.com/all?page=1",{auth:{username:"",password:""}});
 console.log(response.data);
 res.render("index.ejs",{basic:response.data})
     } catch (error) {
@@ -41,7 +41,7 @@ app.get("/apiKey", async (req,res)=>{
     //     const Key= await axios.get("https://secrets-api.appbrewery.com/generate-api-key");
     // console.log(Key.data);
     
-    const response = await axios.get(`https://secrets-api.appbrewery.com/filter?score=5`,{params:{apiKey:"bf0e8280-2822-4215-b34b-8fe3c78d47d1"}});
+    const response = await axios.get(`https://secrets-api.appbrewery.com/filter?score=5`,{params:{apiKey:""}});
     console.log(response.data)
     res.render("index.ejs",{apiKey:response.data})
     } catch (error) {
@@ -52,9 +52,9 @@ app.get("/apiKey", async (req,res)=>{
 
 app.get("/token", async (req,res)=>{
     try {
-    //         const Token= await axios.post("https://secrets-api.appbrewery.com/get-auth-token",{username:"moon123",password:"moon"});
+    //         const Token= await axios.post("https://secrets-api.appbrewery.com/get-auth-token",{username:"",password:""});
     // console.log(Token.data);
-    const token ="6d62933b-d753-46b0-b81f-e4948641bfcb";
+    const token ="";
 const response = await axios.get("https://secrets-api.appbrewery.com/secrets/2",{headers:{Authorization: `Bearer ${token}`}});
 console.log(response.data);
 
