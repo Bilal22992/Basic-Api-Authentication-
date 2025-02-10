@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+</head>
+<body>
+
+    <button><a href="/random">No Authentication</a></button>
+    <button><a href="/basic">Basic Authentication</a></button>
+    <button><a href="/apiKey">ApiKey Authentication</a></button>
+    <button><a href="/token">Token Authentication</a></button>
+    
+    <div>
+        <% if (locals.random) {%>
+        <p> ID: <%= random.id %>, secret:<%= random.secret %> , emScore: <%= random.emScore %> , username:<%= random.username %> , timestamp:<%= random.timestamp %></p>
+        <% } %>
+        <% if (locals.basic) {%>
+            <%basic.forEach(random => {%>
+                <p> ID: <%= random.id %>, secret:<%= random.secret %> , emScore: <%= random.emScore %> , username:<%= random.username %> , timestamp:<%= random.timestamp %></p>
+          <%  }); %>
+            
+            <% } %>
+            <% if (locals.apiKey) {%>
+                <%apiKey.forEach(random => {%>
+                    <p> ID: <%= random.id %>, secret:<%= random.secret %> , emScore: <%= random.emScore %> , username:<%= random.username %> , timestamp:<%= random.timestamp %></p>
+              <%  }); %>
+                
+                <% } %>
+                <% if (locals.token) {%>
+                    
+                        <p> ID: <%= token.id %>, secret:<%= token.secret %> , emScore: <%= token.emScore %> , username:<%= token.username %> , timestamp:<%= token.timestamp %></p>
+                 
+                    
+                    <% } %>
+        
+    </div>
+</body>
+</html>
