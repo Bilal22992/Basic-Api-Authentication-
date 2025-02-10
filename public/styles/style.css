@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: start;
+    align-items:center;
+    margin-top: 200px;
+    
+  
+    gap: 30px;
+}
+.container button{
+    height: 50px;
+    width: 200px;
+    background-color: rgb(143, 143, 230);
+    border: 3px solid rgb(84, 84, 248);
+}
+.container button a {
+    text-decoration: none;
+    color: white;
+}
+.text{
+    width: 800px;
+    background-color: rgb(198, 245, 229);
+    padding: 50px;
+}

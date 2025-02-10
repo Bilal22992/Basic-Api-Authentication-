@@ -8,7 +8,7 @@ const app = express();
 app.listen(3000,()=>{
     console.log("Server Running Successfully"); 
 })      
-
+app.use(express.static("public"));
 app.get("/",(req,res)=>{
     res.render("index.ejs");
 })
